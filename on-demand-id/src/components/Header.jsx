@@ -1,8 +1,9 @@
+import logo from "../assets/ivalt-logo.png";
 function Header() {
 
   return (
     <header>
-        <h1>On-Demand ID</h1>
+        <img src={logo} alt="iVALT" />
     </header>
   );
 }
