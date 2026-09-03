@@ -29,3 +29,25 @@ main h2 {
   margin-top: 20px;
   font-size: 28px;
 }
+.phone-input {
+  margin-top: 40px;
+}
+
+.phone-input label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.phone-input select,
+.phone-input input {
+  width: 350px;
+  max-width: 90%;
+  padding: 12px;
+  font-size: 18px;
+}
+
+.phone-input select {
+  cursor: pointer;
+}
