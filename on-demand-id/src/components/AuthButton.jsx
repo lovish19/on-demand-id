@@ -18,7 +18,9 @@ function handleAuthentication() {
 }
 
   return (
-    <button onClick={handleAuthentication}>
+    <button 
+    className="auth-button"
+    onClick={handleAuthentication}>
       Send Authentication Request
     </button>
   );

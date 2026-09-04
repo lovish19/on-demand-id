@@ -11,6 +11,14 @@ const countryNames = new Intl.DisplayNames(["en"], {
 });
 const countries = getCountries(metadata);
 
+function getCountryFlag(country) {
+  return country
+    .toUpperCase()
+    .replace(/./g, (char) =>
+      String.fromCodePoint(127397 + char.charCodeAt())
+    );
+}
+
 function getMaximumMobileLength(country) {
   const phoneMetadata = new Metadata(metadata);
   phoneMetadata.selectNumberingPlan(country);
@@ -45,33 +53,43 @@ function PhoneInput({phoneNumber,setPhoneNumber,selectedCountry,setSelectedCount
 
   return (
     <div className="phone-input">
-      <label htmlFor="country">
-        Select Country
-      </label>
-
-      <select
-        id="country"
-        value={selectedCountry}
-        onChange={handleCountryChange}
-      >
-        {countries.map((country) => (
-          <option key={country} value={country}>
-            {countryNames.of(country)} (+{getCountryCallingCode(country, metadata)})
-          </option>
-        ))}
-      </select>
-
       <label htmlFor="phone">
         Enter User's Mobile Number
       </label>
 
-      <input
-        id="phone"
-        type="tel"
-        placeholder="Enter a phone number"
-        value={phoneNumber}
-        onChange={handlePhoneChange}
-      />
+      <div className="phone-control">
+        <label className="country-label" htmlFor="country">
+          Select Country
+        </label>
+
+        <div className="country-picker">
+          <span className="selected-flag" aria-hidden="true">
+            {getCountryFlag(selectedCountry)}
+          </span>
+
+          <select
+            id="country"
+            value={selectedCountry}
+            onChange={handleCountryChange}
+            aria-label="Select country"
+          >
+            {countries.map((country) => (
+              <option key={country} value={country}>
+                {getCountryFlag(country)} {countryNames.of(country)} (+
+                {getCountryCallingCode(country, metadata)})
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Enter a phone number"
+          value={phoneNumber}
+          onChange={handlePhoneChange}
+        />
+      </div>
     </div>
   );
 }
