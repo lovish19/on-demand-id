@@ -1,0 +1,286 @@
+/* ==========================================
+   VERIFICATION PAGE
+========================================== */
+
+.verification-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+}
+
+
+/* ==========================================
+   VERIFICATION CARD
+========================================== */
+
+.verification-card {
+  width: 100%;
+  max-width: 850px;
+
+  padding: 45px 50px;
+
+  border: 1px solid rgba(248, 250, 252, 0.1);
+  border-radius: 12px;
+
+  background-color: rgba(31, 41, 55, 0.45);
+
+  color: #f8fafc;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* ==========================================
+   SUCCESS HEADER
+========================================== */
+
+.verification-card h1 {
+  margin: 0;
+
+  color: #51be9c;
+
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+.success-message {
+  margin: 12px 0 40px;
+
+  color: #d1d5db;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   VERIFICATION ROW
+========================================== */
+
+.verification-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid rgba(248, 250, 252, 0.1);
+}
+
+.verification-row:last-of-type {
+  border-bottom: none;
+}
+
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.verification-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.verification-label strong {
+  color: #f8fafc;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.label-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 8px;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+
+/* WHO */
+
+.label-badge.red {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+
+/* WHAT */
+
+.label-badge.blue {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+
+/* WHERE */
+
+.label-badge.purple {
+  background-color: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+}
+
+
+/* WHEN */
+
+.label-badge.yellow {
+  background-color: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+}
+
+
+/* WHY */
+
+.label-badge.green {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+
+/* ==========================================
+   VALUE
+========================================== */
+
+.verification-value {
+  color: #f8fafc;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+}
+
+
+/* ==========================================
+   GPS COORDINATES
+========================================== */
+
+.coordinates {
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-button {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 12px 20px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background-color: #51be9c;
+
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(81, 190, 156, 0.9);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 639px) {
+
+  .verification-page {
+    padding: 24px 16px;
+  }
+
+  .verification-card {
+    padding: 32px 24px;
+  }
+
+  .verification-card h1 {
+    font-size: 28px;
+  }
+
+  .success-message {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+  }
+
+  .verification-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 18px 0;
+  }
+
+  .verification-label {
+    flex-wrap: wrap;
+  }
+
+  .verification-value {
+    font-size: 15px;
+  }
+}
